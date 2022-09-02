@@ -66,6 +66,9 @@ class Model(object):
         val_file = os.path.join(args.checkpoint_dir, "val_results.txt")
         
         val_loss = 0
+        val_regression_loss = 0
+        val_classifier_loss = 0
+        valid_samples = 0
 
         for i, sample in enumerate(val_loader):
             if i >= args.val_iter_per_epoch:
